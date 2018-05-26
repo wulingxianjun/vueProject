@@ -26,6 +26,8 @@ a{
 i{font-style:normal;}
 *{box-sizing:border-box;}
 body,html{height: 100%;}
+.fl{float:left;}
+.fr{float:right;}
 .clearfix::after{
     content:"";
     display:block;
