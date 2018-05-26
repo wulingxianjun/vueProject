@@ -37,3 +37,5 @@ body,html{height: 100%;}
     visibility: hidden;
     zoom:1;
 }
+.actived{color:#e92577;}
+.bgcolor{background-color:#fff;}
