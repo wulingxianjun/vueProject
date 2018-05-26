@@ -1,4 +1,4 @@
-# vue_xm
+# vueProject
 
 > A Vue.js project
 
