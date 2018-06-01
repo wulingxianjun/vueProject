@@ -21,17 +21,11 @@ app.all('*', function(req, res, next) {
 
 const user = require('./user')
 const store = require('./store')
-const staff = require('./staff')
-const comment = require('./comment')
-const trade = require('./transition')
 
 module.exports = {
     start(_port = 88){
         user.reg(app);
         store.reg(app);
-        staff.reg(app);
-        comment.reg(app);
-        trade.reg(app);
-        app.listen(_port,'10.3.133.63');
+        app.listen(_port,'192.168.0.130');
     }
 }

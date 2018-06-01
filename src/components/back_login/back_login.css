@@ -1,0 +1,171 @@
+div,h3,form,label,input,button{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+input{
+    outline:none;
+    border:0 none;
+    background-color:transparent;
+}
+body{
+    font-family: "微软雅黑";
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+}
+.login{
+    width:350px;
+    height: 250px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-80%);
+    /*background-color:rgba(255,255,255,.6);*/
+    box-shadow:8px 8px 30px rgba(113,182,222,0.5),
+                -8px -8px 30px rgba(113,182,222,0.5);
+    border: 1px solid rgb(76,128,150);
+    /*border:1px solid #3C6F8C;*/
+    padding:15px 30px;
+    animation:change 1s linear infinite alternate;
+}
+@keyframes change{
+    100%{
+        box-shadow:30px 30px 70px 10px rgba(113,182,222,0.5),
+                -30px -30px 70px 10px rgba(113,182,222,0.5);
+    }
+}
+.login .cc{
+    background-color:rgba(255,255,255,.3);
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:-100;
+}
+.login .content{
+    margin-bottom:15px;
+    padding-top:40px;
+    z-index:100;
+}
+/*.login .content .username,.login .content .password{*/
+.login .content .cont{
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding-left:12px;
+    margin-bottom:30px;
+    font-size:14px;
+    line-height: 1.428571429;
+    color: #407594;
+    background-color: rgba(255,255,255,.075);
+    border: 2px solid #407594;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.login .content .cont span{
+    display:inline-block;
+    width: 60px;
+    font-weight:bold;
+}
+.login .content .username,.login .content .password{
+    width: 200px;
+    height: 33px;
+}
+
+.login .content .btn_login{
+    display: block;
+    background-color: transparent;
+    /*border:1px solid #407594;*/
+    border:0 none;
+    margin:0 auto;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    width: 66px;
+    height:30px;
+    line-height:30px;
+    font-size: 16px;
+    color: #407594;
+    position:relative;
+    transition:all .5s;
+}
+.login .content .btn_login .btn{
+    border:1px solid transparent;
+    position:absolute;
+    background-color:transparent;
+    
+}
+.login .content .btn_login .btn1{
+    width: 59px;
+    height: 24px;
+    border-left:2px solid #407594;
+    border-bottom:2px solid #407594;
+    left:0px;
+    bottom:0px;
+}
+.login .content .btn_login .btn2{
+    width: 59px;
+    height: 24px;
+    border-right:2px solid #407594;
+    border-top:2px solid #407594;
+    right:-1px;
+    top:-2px;
+}
+.login .content .btn_login .btn3{
+    width:12px;
+    height: 12px;
+    left:-5px;
+    top:-6px;
+    border-right:2px solid #407594;
+    transform:rotateZ(45deg);
+}
+.login .content .btn_login .btn4{
+    width:12px;
+    height: 12px;
+    right:-6px;
+    bottom:-5px;
+    border-left:2px solid #407594;
+    transform:rotateZ(45deg);
+}
+.login .content .btn_login:hover{    
+    color:#fff;
+}
+.login .content .btn_login:hover .btn1{
+    border-left-color:rgba(255,255,255,.6);
+    border-bottom-color:rgba(255,255,255,.6);
+}
+.login .content .btn_login:hover .btn2{
+    border-right-color:rgba(255,255,255,.6);
+    border-top-color:rgba(255,255,255,.6);
+}
+.login .content .btn_login:hover .btn3{
+    border-right-color:rgba(255,255,255,.6);
+    left:-5px;
+    top:-6px;
+}
+.login .content .btn_login:hover .btn4{
+    border-left-color:rgba(255,255,255,.6);
+    right:-6px;
+    bottom:-5px;
+}
+.login .jiao{
+    /*width: 30px;*/
+    /*height: 30px;*/
+    position:absolute;
+}
+.login .jiao1{
+    left:-5px;
+    bottom:-5px;
+    border-left:2px solid #289EAC;
+    border-bottom:2px solid #289EAC;
+    box-shadow:-3px 3px 10px rgba(40,158,172,0.5);
+}
+.login .jiao2{
+    right:-5px;
+    top:-5px;
+    border-right:2px solid #289EAC;
+    border-top:2px solid #289EAC;
+    box-shadow:3px -3px 10px rgba(40,158,172,0.5);
+}
