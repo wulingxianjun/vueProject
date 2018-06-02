@@ -1,10 +1,10 @@
 import axios from 'axios'
 import router from '../router/router'
 
-const baseUrl = 'http://10.3.133.63:88/'
+const baseUrl = 'http://192.168.0.127:88/'
 
 // loading效果
-import $ from 'jquery';
+import $ from 'jquery'; 
 let $loadingBox =  $('<div></div>');
 let $icon = $('<i></i>');
 // 创建元素并添加类名
