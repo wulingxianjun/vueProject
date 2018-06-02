@@ -44,6 +44,11 @@ module.exports = {
             var result=await db.insert("users",{username,password,img});
             res.send(result);
         })
+        app.post('/select_users', async (req, res) => {
+            var findname=req.body.findname;
+            let result = await db.select("users",{"username" : findname});
+            res.send(result);
+        })
         app.post("/addcomment", async function(req,res){
             console.log(req.body);
             var username=req.body.username;
@@ -63,12 +68,25 @@ module.exports = {
             res.send(result);
         })
         app.post("/c_shuju", async function(req,res){
-            console.log(req.body);
+            //console.log(req.body);
             var y_id=req.body.y_id;
             var arr=req.body.arr;
             let result = await db.update('users',{'_id':new ObjectID(y_id)},{$set:{"arr":arr}});
             res.send(result);
 
+        })
+        app.post('/verifytoken', (request, response) => {
+            let token = request.headers['auth'];
+            if(!token){
+                response.send({status: false, message: 'token不能为空'});
+            }
+            jwt.verify(token, '123456', (error, result) => {
+                if(error){
+                    response.send({status: false});
+                } else {
+                    response.send({status: true, data: result});
+                }
+            })
         })
         app.post("/mohu", async function(req,res){
             console.log(req.body);

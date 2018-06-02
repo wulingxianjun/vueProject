@@ -1,7 +1,7 @@
 import axios from 'axios'
 import router from '../router/router'
 
-const baseUrl = 'http://10.3.133.63:88/'
+const baseUrl = 'http://192.168.0.130:88/'
 
 // loading效果
 import $ from 'jquery';
@@ -24,7 +24,9 @@ let filterUrl = (_url) => {
 
 export default {
     get(_url, _params = {}){
-         $loadingBox.show();
+         if(_params.quxiao!="quxiao"){
+            $loadingBox.show();
+         }
         return new Promise((resolve, reject) => {
             // axios.get(filterUrl(_url), {params: _params}).then((res) => {
             //     resolve(res)
@@ -49,7 +51,9 @@ export default {
         })
     },
     post(_url, _params = {}){
-        $loadingBox.show();
+        if(_params.quxiao!="quxiao"){
+            $loadingBox.show();
+         }
         return new Promise((resolve, reject) => {
             // axios.post(filterUrl(_url), _params).then((res) => {
             //     resolve(res)

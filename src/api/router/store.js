@@ -7,10 +7,15 @@ module.exports = {
             let result = await db.select('goodslist');
             res.send(result)
         }),
+        app.post('/select_list', async (req, res) => {
+            var s_id=JSON.stringify(req.body.s_id);
+            console.log(s_id)
+            let result = await db.select("goodslist",{"id" : s_id});
+            res.send(result);
+        }),
         app.post('/delPro',async (req,res) => {
             let proId = req.body.pId*1
             console.log('pId：',proId)
-
             let result = await db.remove('goodslist',{'id':proId});
             res.send(result)
         }),

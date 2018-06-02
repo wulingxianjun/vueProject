@@ -1,0 +1,52 @@
+.car_dabox{display:flex;flex-direction: column;height: 100%;}
+.car_dabox .car_tou{display:flex;line-height: 50px;border-bottom:1px solid #eee;height: 50px;position:fixed;top:0;width: 100%;background:#fff;z-index: 880;}
+.car_dabox .car_tou li{flex:1;text-align:center;}
+.car_dabox .fatou{font-size: 23px;}
+.car_dabox .car_tou .zhu{font-size: 20px;font-weight: 600;}
+.car_dabox .car_tou .hou{font-size: 18px;text-align: right;}
+.car_dabox .car_tou .xiaoxi{margin:0 10px;}
+.car_dabox .dizhi{padding-left:10px;line-height: 35px;font-size: 16px;border-bottom:10px solid #eee;height: 45px;margin-top:50px;}
+.car_dabox .dizhi img{width: 18px;height: 22px;margin-right:10px;display:inline-block;vertical-align: middle;}
+.car_dabox .sop .ziying{line-height: 40px;height: 40px;font-size: 18px;padding:0 3%;border-bottom:1px solid #eee;}
+.car_dabox .sop .ziying .zitu{width: 25px;height: 20px;display:inline-block;vertical-align: middle;margin-left:3px;}
+.car_dabox .car_main{margin-bottom:100px;}
+.car_dabox .sop{font-size: 13px;line-height: 20px;overflow-y:auto;}
+.car_dabox .sop .car_lis{height: 100px;margin:10px;position:relative;}
+.car_dabox .sop .you{width: 92%;position:relative;height: 106px;border-bottom:1px solid #eee;padding-bottom:5px;}
+.car_dabox .sop .you .tejia{width: 30px;height: 22px;display:inline-block;vertical-align: middle;}
+.car_dabox .sop .tu{width: 25%;height: 80px;margin-right:6px;}
+.car_dabox .sop .xuan{width: 5%;height: 70px;margin-right:6px;line-height: 70px;font-size: 23px;}
+.car_dabox .sop .p2{width: 20%;text-align: right;}
+.car_dabox .sop .p2 .san{margin-right:15px;display:none;}
+.car_dabox .sop .p2 .price{color:#e92577;}
+.car_dabox .sop .p2 .price::before{
+    content:"￥";
+    display:inline-block;
+}
+.car_dabox .sop .shuliang{text-align: right;}
+.car_dabox .sop .meiri{ color:#e92577;position:absolute;bottom:3px;}
+.car_dabox .sop .con{overflow: hidden;}
+.car_dabox .xidi{position:fixed;bottom:49px;width: 100%;height: 50px;font-size: 14px;border-top:0.5px solid #eee;padding-left:10px;background:#fff;}
+.car_dabox .xidi .zuo{width: 20%;}
+.car_dabox .xidi .zhong{width: 50%;margin:5px 5px 0 0;text-align: right;}
+.car_dabox .xidi .zhong .zongji{
+    color:#e92577;
+}
+.car_dabox .xidi .zhong .shui{text-align:right;font-size: 13px;padding-right:3px;}
+.car_dabox .xidi .zhong .shui span{
+    color:#e92577;
+}
+.car_dabox .xidi .jiesuan{width: 20%;height: 50px;line-height: 50px;background:#e92577;text-align: center;color:#fff;font-size: 18px;}
+.car_dabox .xidi .zi{line-height: 44px;}
+.car_dabox .t_dl{font-size: 14px;line-height: 50px;color:#fff;padding-left:15px;background:#e31436;}
+.car_dabox .t_dl .r_jiantou{float:right;margin:12px 20px 0 0;}
+.car_dabox .kong{width: 100%;height: 100%;}
+/*.hezi .bianji{display:none;}*/
+.car_dabox .sop{border-bottom:10px solid #eee;}
+.car_dabox .sop .xiaoji{text-align: right;margin-bottom:10px;margin-top:12px;padding-right:3%;color:#e92577;}
+.car_dabox .sop .hezi{width: 47%;margin-left:10px;}
+.car_dabox .sop .hezi .bianji{line-height: 30px;text-align: center;padding-top:10px;display:none;}
+.car_dabox .sop .hezi .bianji input{width: 50px;height: 30px;border:1px solid #333;text-align: center;vertical-align: middle;}
+.car_dabox .sop .hezi .bianji span{display:inline-block;vertical-align:middle; width: 30px;height: 30px;border:1px solid #333;font-size: 22px;}
+.car_dabox .sop .hezi .bianji .jian{border-right:0;}
+.car_dabox .sop .hezi .bianji .jia{border-left:0;}
