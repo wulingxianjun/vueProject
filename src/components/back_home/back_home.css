@@ -1,0 +1,436 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+ul,li{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+.x_houtai{
+    width: 100%;
+    height: 100%;
+    color:#fff;
+    position:relative;
+}
+.x_houtai .header{
+    width: 100%;
+    height: 52px;
+    position:fixed;
+    left:0;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+}
+.x_houtai .header i{
+    font-size:18px;
+}
+.x_houtai .header h2{
+    line-height:50px;
+    margin-left:30px;
+}
+.x_houtai .header h2 img{
+    width: 36px;
+    float: left;
+    margin-right:10px;
+}
+.x_houtai .header .msg{
+    display:flex;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin: 6px;
+    padding: 10px 45px 6px 30px;
+    width: 45%;
+}
+.x_houtai .header .msg ul.date{
+    display:flex;
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+    padding-right: 20px;
+    width:200px;
+}
+.x_houtai .header .msg ul.date i,.x_houtai .header .msg ul.time i,.x_houtai .header .msg ul.weather i{
+    margin-right: 8px;
+}
+.x_houtai .header .msg ul.time{
+    display:flex;
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+    margin-left: 25px;
+    margin-right: -25px;
+    padding-right: 20px;
+}
+.x_houtai .header .msg .weather_box{
+    margin-left: 50px;
+    padding-right: 20px;
+    overflow:hidden;
+    
+}
+.x_houtai .header .msg ul.weather{
+}
+.x_houtai .header .msg ul.weather li{
+    height:22px;
+}
+.x_houtai .header ul.right{}
+.x_houtai .header ul.right li{
+    float: left;
+    line-height:50px;
+    margin:0 10px;
+}
+.x_houtai .header ul.right li a{
+    display:inline-block;
+    padding:0 8px;
+    color:#fff;
+    font-size:14px;
+    height:50px;
+    transition:all .3s;
+}
+.x_houtai .header ul.right li a:hover{
+    background-color:rgba(0, 0, 0, 0.2);
+}
+.x_houtai .header ul.right li a i{
+    font-size:18px;
+    margin-right:5px;
+    line-height:50px;
+}
+/*================================*/
+.x_houtai .body{
+    position:fixed;
+    bottom:40px;
+    top:52px;
+    left:0;
+    right:0;
+}
+.x_houtai .body .menu{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width: 210px;
+    overflow:hidden;
+    transition:width 0.5s;
+    padding-top:20px;
+}
+.x_houtai .body .menu p{
+    height: 49px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    /*
+    border-bottom:1px solid #e7e7e2;
+    margin-bottom:1px;*/
+}
+.x_houtai .body .menu p a{
+    display:block;
+    width: 40px;
+    height: 40px;
+    float:right;
+    margin:5px 10px 0 0;
+    text-align:center;
+    line-height:40px;
+    border-radius:4px;
+}
+.x_houtai .body .menu p a i{
+    font-size:16px;
+    color:#75b9e6;
+}
+.x_houtai .body .menu p a:hover{
+    background-color:#75b9e6;
+}
+.x_houtai .body .menu p a:hover i{
+    color:#fff;
+}
+.x_houtai .body .menu ul.nav{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+.x_houtai .body .menu ul.nav li{
+    cursor:pointer;
+}
+.x_houtai .body .menu ul.nav li a{
+    display:block;
+    height:52px;
+    padding-left:40px;
+    line-height:52px;
+    font-size:14px;
+    transition:background 0.4s;
+}
+.x_houtai .body .menu ul.nav li a span{
+    color:#fff;
+}
+.x_houtai .body .menu ul.nav li i{
+    width: 18px;
+    height: 18px;
+    margin-right:18px;
+    color:#fff;
+    font-size:16px;
+}
+.x_houtai .body .menu ul.nav li a.active{
+    background: #fff;
+    font-weight: bold;
+    border-right: 1px solid transparent;
+    margin-right: -1px;
+    border-top: 1px solid #e0e0da;
+    border-bottom: 1px solid #e0e0da;
+}
+.x_houtai .body .menu ul.nav li a.active i{
+    color:#75b9e6;
+}
+.x_houtai .body .menu ul.nav li a:hover{
+    background:#eaeeef;
+}
+.x_houtai .body .menu ul.nav li a:hover i{
+    color:#75b9e6;
+}
+.x_houtai .body .main{
+    position:absolute;
+    left:210px;
+    top:10px;
+    right:0px;
+    bottom:0px;
+    margin:0 0 0 20px;
+    overflow-x:hidden;
+    color:#9EA7B3;
+    background: -webkit-linear-gradient(45deg, rgb(245, 245, 245) 30px, rgb(245, 245, 245) 30px),
+         -webkit-linear-gradient(135deg, transparent 30px, rgb(245, 245, 245) 30px),
+          -webkit-linear-gradient(225deg, rgb(245, 245, 245) 30px, rgb(245, 245, 245) 30px),
+           -webkit-linear-gradient(315deg, transparent 30px, rgb(245, 245, 245) 30px);
+    background-size: 52% 52%;
+    background-position: left bottom, right bottom, right top, left top;
+    background-repeat: no-repeat;
+}
+.x_houtai .body .main::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-width: 0 42px 42px 0;
+    border-style: solid;
+    border-color: #fff rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.4),
+                 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: rotate(-90deg);
+}
+.x_houtai .body .main::-webkit-scrollbar {
+    display: none;
+}
+.x_houtai .body .main .add_stores{
+    height: 52px;
+    padding-left:45px;
+    border-bottom: 1px solid rgb(211,211,211);
+}
+.x_houtai .body .main .add_stores li{
+    float: left;
+    line-height:50px;
+    padding:0 10px;
+}
+.x_houtai .body .main .add_stores li a{
+    color:#9ea7b3;
+}
+.x_houtai .body .main .add_stores li:hover a{
+    color:#1980c3;
+    text-decoration:underline;
+}
+.x_houtai .body .main .add_stores li:hover i{
+    color:#1980c3;
+}
+.x_houtai .body .main .add_stores li i{
+    font-size:16px;
+    margin-right:5px;
+}
+.x_houtai .body .main .mask{
+    display:none;
+    background:rgba(0,0,0,.2);
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+}
+.x_houtai .body .main .popup{
+    display:none;
+    width:350px;
+    height:430px;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    position:absolute;
+    left:45%;
+    top:45%;
+    transform:translate(-50%,-50%);
+    background:#fff;
+}
+.x_houtai .body .main .popup h3{
+    line-height:26px;
+    border-bottom:1px solid #ddd;
+    padding-left:20px;
+    padding-bottom:5px;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.x_houtai .body .main .popup .close{
+    cursor:pointer;
+    width: 28px;
+    height: 28px;
+    border-radius:4px;
+    text-align:center;
+    line-height:28px;
+    font-size:20px;
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.x_houtai .body .main .popup .cont{
+    margin:5px 0;
+    padding-left:20px;
+    font-size: 14px;
+}
+.x_houtai .body .main .popup .cont label{
+    display:inline-block;
+    width: 35px;
+    height: 30px;
+    margin-right:10px;
+    line-height: 1.42857143;
+    font-weight:bold;
+    text-align-last:justify;
+}
+.x_houtai .body .main .popup .cont input{
+    width: 232px;
+    height: 30px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.x_houtai .body .main .popup .cont input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.x_houtai .body .main .popup .cont input#myid{
+    background-color:#eee;
+    cursor:default;
+}
+.x_houtai .body .main .popup .submit{
+    display: block;
+    border:1px solid #75b9e6;
+    border-radius:4px;
+    padding:5px 8px;
+    background: #fff;
+    margin:0 auto;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height:1.42857143;
+    font-size: 14px;
+    /*color: #407594;*/
+}
+.x_houtai .body .main .change{
+    display:none;
+    width:350px;
+    height:430px;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    position:absolute;
+    left:45%;
+    top:45%;
+    transform:translate(-50%,-50%);
+    background:#fff;
+}
+.x_houtai .body .main .change h3{
+    line-height:26px;
+    border-bottom:1px solid #ddd;
+    padding-left:20px;
+    padding-bottom:5px;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.x_houtai .body .main .change .close{
+    cursor:pointer;
+    width: 28px;
+    height: 28px;
+    border-radius:4px;
+    text-align:center;
+    line-height:28px;
+    font-size:20px;
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.x_houtai .body .main .change .cont{
+    margin:5px 0;
+    padding-left:20px;
+    font-size: 14px;
+}
+.x_houtai .body .main .change .cont label{
+    display:inline-block;
+    width: 35px;
+    height: 30px;
+    margin-right:10px;
+    line-height: 1.42857143;
+    font-weight:bold;
+    text-align-last:justify;
+}
+.x_houtai .body .main .change .cont input{
+    width: 232px;
+    height: 30px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.x_houtai .body .main .change .cont input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.x_houtai .body .main .change .cont input#myid{
+    background-color:#eee;
+    cursor:default;
+}
+.x_houtai .body .main .change .submit{
+    display: block;
+    border:1px solid #75b9e6;
+    border-radius:4px;
+    padding:5px 8px;
+    background: #fff;
+    margin:0 auto;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height:1.42857143;
+    font-size: 14px;
+    /*color: #407594;*/
+}
+.x_houtai .body .main .change .submit:hover{
+    color:#fff;
+}
+/*===========================*/
+.x_houtai .footer{
+    width: 100%;
+    height: 40px;
+    border-top:1px solid #e7e7e2;
+    line-height:40px;
+    text-align:center;
+    position:fixed;
+    bottom:0;
+    left:0;
+}
+.x_houtai .footer p{
+    margin:0 auto;
+}
+.x_houtai .footer span{
+    margin-right:15px;
+}

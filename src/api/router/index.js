@@ -26,6 +26,8 @@ module.exports = {
     start(_port = 88){
         user.reg(app);
         store.reg(app);
-        app.listen(_port,'192.168.0.127');
+
+        app.listen(_port,'192.168.0.130');
+
     }
 }

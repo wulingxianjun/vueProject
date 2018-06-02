@@ -18,6 +18,8 @@ import laaComponent from '../components/LAA/laa.vue'
 import back_homeComponent from '../components/back_home/back_home.vue'
 import back_loginComponent from '../components/back_login/back_login.vue'
 import back_productComponent from '../components/back_product/back_product.vue'
+import back_usersComponent from '../components/back_product/back_users.vue'
+
 
 const router = new VueRouter({
     routes: [
@@ -32,9 +34,11 @@ const router = new VueRouter({
         {path: '/laa', component: laaComponent, name: 'laa'},
         {path: '/login', component: loginComponent, name: 'login'},
         {path: '/reg', component: regComponent, name: 'reg'},
-        {path: 'back_login', component: back_loginComponent, name: 'back_login'},
+        {path: '/back_login', component: back_loginComponent, name: 'back_login'},
         {path: '/back_home', component: back_homeComponent, name: 'back_home', children: [
-            {path: 'back_product', component: back_productComponent, name: 'back_product'}
+            {path: 'back_product', component: back_productComponent, name: 'back_product'},
+            {path: 'back_users', component: back_usersComponent, name: 'back_users'}
+
         ]}
     ]
 })
