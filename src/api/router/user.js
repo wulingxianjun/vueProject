@@ -58,9 +58,8 @@ module.exports = {
             res.send(result);
         })
         app.post('/select_users', async (req, res) => {
-            console.log(req.body)
-            var findname = req.body.findname
-            let result = await db.select("users",{"username":findname});
+            var findname=req.body.findname;
+            let result = await db.select("users",{"username" : findname});
             res.send(result);
         })
         app.post("/updateAd", async function(req,res){
@@ -90,12 +89,25 @@ module.exports = {
             res.send(result);
         })
         app.post("/c_shuju", async function(req,res){
-            console.log(req.body);
+            //console.log(req.body);
             var y_id=req.body.y_id;
             var arr=req.body.arr;
             let result = await db.update('users',{'_id':new ObjectID(y_id)},{$set:{"arr":arr}});
             res.send(result);
 
+        })
+        app.post('/verifytoken', (request, response) => {
+            let token = request.headers['auth'];
+            if(!token){
+                response.send({status: false, message: 'token不能为空'});
+            }
+            jwt.verify(token, '123456', (error, result) => {
+                if(error){
+                    response.send({status: false});
+                } else {
+                    response.send({status: true, data: result});
+                }
+            })
         })
         app.post("/mohu", async function(req,res){
             console.log(req.body);

@@ -28,6 +28,7 @@ const router = new VueRouter({
         {path: '/list', component: listComponent, name: 'list'},
         {path: '/details', component: detailsComponent, name: 'details'},
         {path: '/car', component: carComponent, name: 'car'},
+        {path: '/sort', component: sortComponent, name: 'sort'},
         {path: '/user', component: userComponent, name: 'user'},
         {path: '/pay', component: payComponent, name: 'pay'},
         {path: '/address', component: addressComponent, name: 'address'},

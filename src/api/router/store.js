@@ -15,7 +15,6 @@ module.exports = {
         app.post('/delPro',async (req,res) => {
             let proId = req.body.pId*1
             console.log('pId：',proId)
-
             let result = await db.remove('goodslist',{'id':proId});
             res.send(result)
         }),

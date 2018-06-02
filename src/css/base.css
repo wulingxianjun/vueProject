@@ -39,3 +39,6 @@ body,html{height: 100%;}
 }
 .actived{color:#e92577;}
 .bgcolor{background-color:#fff;}
+.w_box{display:flex;flex-direction:column;}
+.loading{width: 100%;height: 100%;font-size: 60px;position:fixed;top:0;left:0;}
+.loading-icon{position:fixed;top:45%;left:45%;color:#666;}
