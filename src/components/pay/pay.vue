@@ -78,6 +78,10 @@
     </div>
     <div class="zhezhao" @click="zhe"></div>
     <div class="zhifu">支付宝，了解一下<img src="../../images/zhifubao.png"/></div>
+=======
+  <div>
+     <h1>付款</h1>
+>>>>>>> 6f0674a9b0c9961886e9f9278d991b3064bab15c
   </div>
 </template>
 <script>

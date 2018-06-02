@@ -8,8 +8,7 @@ module.exports = {
             res.send(result)
         }),
         app.post('/select_list', async (req, res) => {
-            var s_id=JSON.stringify(req.body.s_id);
-            console.log(s_id)
+            var s_id=req.body.s_id;
             let result = await db.select("goodslist",{"id" : s_id});
             res.send(result);
         }),
