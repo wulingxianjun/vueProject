@@ -38,6 +38,7 @@ const router = new VueRouter({
         {path: '/back_home', component: back_homeComponent, name: 'back_home', children: [
             {path: 'back_product', component: back_productComponent, name: 'back_product'},
             {path: 'back_users', component: back_usersComponent, name: 'back_users'}
+
         ]}
     ]
 })
