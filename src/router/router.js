@@ -13,7 +13,7 @@ import regComponent from '../components/reg/reg.vue'
 import detailsComponent from '../components/details/details.vue'
 import addressComponent from '../components/address/address.vue'
 import payComponent from '../components/pay/pay.vue'
-import laaComponent from '../components/LAA/laa.vue'
+import laaComponent from '../components/addNewAddress/addNewAddress.vue'
 
 import back_homeComponent from '../components/back_home/back_home.vue'
 import back_loginComponent from '../components/back_login/back_login.vue'
@@ -32,7 +32,7 @@ const router = new VueRouter({
         {path: '/user', component: userComponent, name: 'user'},
         {path: '/pay', component: payComponent, name: 'pay'},
         {path: '/address', component: addressComponent, name: 'address'},
-        {path: '/laa', component: laaComponent, name: 'laa'},
+        {path: '/addNewAddress', component: laaComponent, name: 'addNewAddress'},
         {path: '/login', component: loginComponent, name: 'login'},
         {path: '/reg', component: regComponent, name: 'reg'},
         {path: '/back_login', component: back_loginComponent, name: 'back_login'},

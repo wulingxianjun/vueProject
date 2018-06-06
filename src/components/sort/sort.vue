@@ -514,7 +514,7 @@
             },
         },
         mounted(){
-                        
+            $("#c_footer ul").children().eq(1).addClass("actived");     
         }
     }
 </script>

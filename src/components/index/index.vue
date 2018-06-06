@@ -173,6 +173,7 @@
         },
 
         computed: {
+            
         },
         methods:{
             t_sort(){
@@ -192,6 +193,7 @@
             }
         },
         mounted () {
+            $("#c_footer ul").children().eq(0).addClass("actived");
             // 轮播图
             let banner1 = $('.c_banner');
             banner1.swipeslider();

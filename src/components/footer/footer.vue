@@ -17,7 +17,6 @@
             t_index(){
                 clearInterval(this.txt);
                 this.$router.push({name:'index'});
-
             },
             t_sort(){
                 clearInterval(this.txt);

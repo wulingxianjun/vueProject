@@ -1,0 +1,21 @@
+.addNewAddress{display: flex;flex-direction: column;height: 100%;}
+.newAdHead{display: flex;height: 45px;justify-content: center;align-items: center;background-color: #f8f8f8;font-size: 16px;color:#000;position: relative;}
+.newAdHead i{display: block;font-size: 24px;position: absolute;left: 10px;top: 10px;}
+
+
+.newAdMain{flex: 1;overflow-x: auto;}
+.newAdMain ul li{display:flex;align-items: center;border-bottom: 1px solid #f0f0f0;padding: 10px;font-size: 14px;}
+.newAdMain ul li #trigger{flex:1;height: 30px;line-height: 30px;font-size: 16px;color:#333;font-weight: bold;}
+.newAdMain ul li label{display: inline-block;height: 30px;line-height: 30px;}
+.newAdMain ul li input{display: inline-block;flex:1;height: 30px;line-height: 30px;padding-left: 10px;font-size: 16px;color:#333;font-weight: bold;}
+.newAdMain ul .label span{display: inline-block;width: 20%;text-align: center;height: 24px;line-height: 24px;border-radius: 15px;font-size: 14px;}
+
+.newAdMain ul li .active{background-color: #f65b04;color:#fff;}
+.newAdMain ul .defaultAd{position: relative;}
+.newAdMain ul .defaultAd div{width: 40px;height: 20px;line-height: 20px;border-radius: 10px;border:1px solid #9b9b9b;position: absolute;right: 20px;padding: 0 4px;}
+.newAdMain ul .defaultAd div i{display: inline-block;width: 12px;height: 12px;border-radius:50%;background-color: #9b9b9b;}
+.newAdMain ul .defaultAd .chosenDf{border-color:#f65b04;padding: 3px 4px;}
+.newAdMain ul .defaultAd .chosenDf i{background-color: #f65b04;float: right;}
+
+.newAdMain .allTips{font-size: 14px;color:#fff;background-color: #222;text-align: center;border-radius: 15px;padding: 8px 20px;position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);display: none;}
+.newAdFooter{display: flex;height: 50px;justify-content:center;background-color: #f8f8f8;align-items: center;}

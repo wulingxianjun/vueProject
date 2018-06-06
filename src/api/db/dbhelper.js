@@ -4,7 +4,7 @@ const url = 'mongodb://localhost:27017';
 const ObjectID = require('mongodb').ObjectID;
 var db=null;
 MongoClient.connect(url, function(err, client) {
-    db=client.db('project');
+    db=client.db('gz1801');
     
 });
 
