@@ -1,0 +1,30 @@
+/* WebKit browsers */
+.inputBox input::-webkit-input-placeholder{color:#fff;}
+/* Mozilla Firefox 19+ */
+.inputBox input::-moz-placeholder{color:#fff;}
+/* Mozilla Firefox 4 to 18 */
+.inputBox input:-moz-placeholder{color:#fff;}
+/* Internet Explorer 10-11 */
+.inputBox input:-ms-input-placeholder{color:#fff;}
+
+
+.loginBox{height: 100%;padding-top: 10%;background-color: #e92577;}
+/*.loginBox a{display: block;height: 40px;line-height: 40px;color:#d6d6d6;font-size: 14px;text-decoration:underline;padding-left: 10px;}*/
+.logo{/*width: 50%;*/text-align: center;color:#fff;font-weight: bold;padding-bottom: 30px;}
+.inputBox,.btnBox,.otherBox,.tips{width: 90%;margin:0 auto;padding-top: 20px;}
+.inputBox li{border-bottom: 1px solid #FFF;}
+.inputBox li input{height: 50px;padding-left: 10px;background-color: transparent;font-size: 18px;font-weight: normal;color:#fff;}
+.btnBox li{height: 44px;border-radius: 22px;margin-top: 20px;text-align: center;line-height: 44px;font-size: 20px;}
+.btnBox .login2{background-color: #fff;color:#e92577;border:1px solid #e92577;}
+.btnBox .register{background-color: transparent;color:#fff;border:1px solid #FFB5A0;}
+.otherBox p{height: 30px;line-height: 30px;text-align: center;}
+.otherBox span{display:inline-block;text-align: center;position: relative;color:#fff;font-size: 24px;}
+.otherBox span::before,.otherBox span::after{content: "";position: absolute;width: 9em;height: 1px;background: #fff;font-size: 14px;top: 15px;}
+.otherBox span::before{left: -9.5em;}
+.otherBox span::after{right: -9.5em;}
+.orWay{width: 50%;margin: 0 auto;text-align: center;padding-top: 20px;}
+.orWay i{width: 30%;font-size: 26px;color:#fff;}
+
+.loginTips{padding-top: 60px;}
+.loginTips div{width: 50%;margin: 0 auto;background-color: #aaa;border-radius: 10px;padding: 10px;}
+.loginTips p{text-align: center;color:#fff;font-size: 16px;line-height: 32px;}

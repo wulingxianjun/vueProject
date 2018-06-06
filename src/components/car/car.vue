@@ -1,6 +1,6 @@
 <template>
-    <div class="cardada">
-        <div class="car_dabox">
+    <div class="car_dabox">
+        <div class="dabox">
         <ul class="car_tou">
             <li></li>
             <li class="zhu">购物车(<span class="num">{{data.length}}</span>)</li>
@@ -81,24 +81,42 @@
             }
         },
         mounted(){
+            $("#c_footer ul").children().eq(2).addClass("actived");
             var yonghu=window.localStorage.getItem("username");
             if(yonghu){
                 http.post("select_users",{findname:yonghu}).then(res1=>{
                     var arr=JSON.parse(res1.data[0].arr);
-                    http.get("stores").then(res2=>{
-                        res2.data.map(item2=>{
-                            arr.map(item=>{
-                                if(item.s_id==item2.id){
-                                    if(this.types.indexOf(item2.type)<0){
-                                        this.types.push(item2.type)
+                    console.log(arr)
+                    if(arr==undefined||arr.length<1||arr==null){
+                        $(".dabox").html('');
+                        $(".dabox").html(`
+                            <ul class="car_tou">
+                                <li></li>
+                                <li class="zhu">购物车</li>
+                                <li class="hou"></li>
+                            </ul>
+                            <h3 class="t_list">空空如也~~~去添加商品吧！<i class="fa fa-arrow-circle-o-right r_jiantou fa-2x" aria-hidden="true"></i> </h3>
+                            <img src="./src/images/kong.png" class="kong"/>
+                        `);
+                        $(".t_list").click(()=>{
+                            this.$router.push({name:"list"})
+                        })
+                    }else{
+                        http.get("stores").then(res2=>{
+                            res2.data.map(item2=>{
+                                arr.map(item=>{
+                                    if(item.s_id==item2.id){
+                                        if(this.types.indexOf(item2.type)<0){
+                                            this.types.push(item2.type)
+                                        }
+                                        item2.qty=item.qty;
+                                        this.data.push(item2);
+                                        $(".zhu .num").html(this.data.length)
                                     }
-                                    item2.qty=item.qty;
-                                    this.data.push(item2);
-                                    $(".zhu .num").html(this.data.length)
-                                }
+                                })
                             })
                         })
-                    })
+                    }
                 })
             }else{
                 $(".dabox").html('');
@@ -112,7 +130,7 @@
                     <img src="./src/images/kong.png" class="kong"/>
                 `);
                 $(".t_dl").click(()=>{
-                    this.props.router.push({pathname: '/user', query: {id: "tan"}})
+                    this.$router.push({name:"login"})
                 })
             }
         },
@@ -133,14 +151,12 @@
                                 arr.push(obj);
                             }
                         })
-                    })
+                    });
                     //console.log(arr)
                     this.$router.push({
-                        name:"pay",
-                        params:{
-                            arr_obj:arr
-                        }
+                        name:"pay"
                     })
+                    this.$store.dispatch("getcar",arr);
                 }
             },
             bianji(){
@@ -225,14 +241,30 @@
                 else if(event.target.className=="queding"){
                     $(".zhezhao").fadeOut(300);
                     $(".tanchuang").fadeOut(300);
-                    var username="武陵仙君";
+                    var username=window.localStorage.getItem("username");
                     http.post("select_users",{findname:username}).then(user=>{
                         var yonghu_arr=JSON.parse(user.data[0].arr);
                         yonghu_arr.map((item,idx)=>{
                             if(item.s_id==this.id){
                                 yonghu_arr.splice(idx,1);
+                                if(yonghu_arr.length==0){
+                                    $(".dabox").html('');
+                                    $(".dabox").html(`
+                                        <ul class="car_tou">
+                                            <li></li>
+                                            <li class="zhu">购物车</li>
+                                            <li class="hou"></li>
+                                        </ul>
+                                        <h3 class="t_list">空空如也~~~去添加商品吧！<i class="fa fa-arrow-circle-o-right r_jiantou fa-2x" aria-hidden="true"></i> </h3>
+                                        <img src="./src/images/kong.png" class="kong"/>
+                                    `);
+                                    $(".t_list").click(()=>{
+                                        this.$router.push({name:"list"})
+                                    })
+                                }
                             }
                         })
+                        console.log(yonghu_arr)
                         var arr2=JSON.stringify(yonghu_arr);
                         http.post("c_shuju",{y_id:user.data[0]._id,arr:arr2}).then(res=>{
                             this.data.map((item,idx)=>{

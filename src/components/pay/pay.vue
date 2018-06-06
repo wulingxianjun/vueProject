@@ -7,15 +7,15 @@
     </div>
     <div class="q_main">
     <div class="tishi" v-if="i==0"><img src="../../images/lingdang.png" class="lingdang"/>温馨提示：订单中含有不支持7天无理由退货的商品，请确认相关商品信息后提交订单<span class="cha" @click="cha">&times;</span></div>
-    <div class="dizhi">
-        <h2 class="di1">
-            <span>武陵仙君</span>
-            <span class="dianhua">186****0798</span>
-            <span class="xiao">学校</span>
-        </h2>
-        <p class="di2">广东省广州市天河区上元岗西街智汇Park,E座501楼二教室 </p>
+    <div class="dizhi" v-for="item in address">
+        <div class="di1">
+            <span>{{item.yourName}}</span>
+            <span class="dianhua">{{item.phone.slice(0,3)+"****"+item.phone.slice(7)}}</span>
+            <span class="xiao">{{item.label}}</span>
+        </div>
+        <p class="di2">{{item.district+" "+item.detailAd}}</p>
         <img src="../../images/dingwei2.png" class="dingwei2"/>
-        <i class="fa fa-angle-right t_guanli" aria-hidden="true"></i>
+        <i class="fa fa-angle-right t_guanli" aria-hidden="true" @click="t_address"></i>
     </div>
     <img src="../../images/huabian.png" class="huabian"/>
     <div class="sheng1" v-if="obj.qty!=null">
@@ -86,6 +86,7 @@
     export default{
         data(){
             return{
+                address:{},
                 canshu:[],
                 jianshu:0,
                 zongjia:0,
@@ -107,14 +108,13 @@
         mounted(){
             this.classObject2.qu_chuxian=false;
             //console.log(this.$route.params.arr_obj)
-            http.post("verifytoken").then(jiemi=>{
-                console.log(jiemi)
+            var username=window.localStorage.getItem("username")
+            http.post("select_users",{findname:username}).then(user=>{
+                this.address=JSON.parse(user.data[0].address);
             })
-            var username="武陵仙君";
-            this.canshu=this.$route.params.arr_obj;
+            this.canshu=(this.$store.state.car.data)
             if(this.canshu.length==1){
                 http.get("myshuju").then(res=>{
-                    //console.log(res)
                     res.data.map(item=>{
                         if(this.canshu[0].s_id==item.id){
                             this.zongjia=item.sell*1*this.canshu[0].qty;
@@ -142,6 +142,9 @@
             cha(){
                 this.i=1;
             },
+            t_address(){
+                this.$router.push({name:"address"});
+            },
             t_qingdan(){
                 $('body').css("overflow","hidden");
                 this.classObject.chuxian=true;
@@ -153,7 +156,7 @@
                 this.classObject2.qu_chuxian2=false;
             },
             lufan(){
-                this.$router.go(-1);
+                this.$router.push({name:"car"});
             },
             zhifu(){
                 $(".zhezhao").fadeIn(300);

@@ -140,6 +140,7 @@
         },
         methods:{
             feigou(){
+                console.log($(event.target).parents("li"))
                 var id=$(event.target).parents("li")[0].title;
                 if(event.target.tagName=="I"){
                     var yonghu=window.localStorage.getItem("username");
@@ -199,11 +200,11 @@
             },
             t_qu(){
                 $('body').css("overflow","auto");
-                $(".zhezhao").fadeIn(300);
-                $(".tanchuang").fadeIn(300);
+                $(".zhezhao").fadeOut(300);
+                $(".tanchuang").fadeOut(300);
             },
             t_que(){
-                //this.$router.push({path:"/login"})
+                this.$router.push({name:"login"})
             },
             t_car(){
                 this.$router.push({path:"/car"})
