@@ -135,8 +135,8 @@
                 <h3>为您推荐</h3>
                 <a @click="t_login">登录账号，查看推荐的商品&nbsp;>></a>
             </div>
-            <ul class="r_bottom clearfix">                
-                <li @click="t_details" v-for="(item,idx) in dataset" :value="idx" :key="idx">
+            <ul class="r_bottom clearfix" @click="t_details">                
+                <li v-for="(item,idx) in dataset" :value="idx" :key="idx" :title="item.id">
                     <a><img :src="item.img" /></a>
                     <p>{{item.name}}</p>
                     <h6>￥{{item.price}}.00</h6>
@@ -186,9 +186,11 @@
                 clearInterval(this.timer);
             },            
             t_details(e){
-                var id = $(e.target).parents('li')[0].value;
-                // console.log(id)
-                this.$router.push({path:"/details/" + id});
+                var id=($(e.target).parents('li')[0].title)
+                this.$router.push({
+                    name:"details",
+                    query:{id}
+                });
                 clearInterval(this.timer);
             }
         },

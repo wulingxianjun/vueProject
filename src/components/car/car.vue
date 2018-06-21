@@ -69,6 +69,7 @@
     export default{
         data(){
             return {
+                j:0,
                 id:0,
                 b:0,
                 a:1,
@@ -306,7 +307,7 @@
                 }else{
                     this.xiaojis.push(obj);
                 }
-                console.log(this.xiaojis)
+                //console.log(this.xiaojis)
             },
             weituo(idx,key){
                 if(event.target.title=="danxuan"){
@@ -322,31 +323,46 @@
                         this.b=0;
                     }
                     var lei=$(event.target).parents("ul").find(".lei").html();
-                    var a;
-                    //console.log(lei)
                     var arr=[];
+                    var leixings=[];
                     this.data.map(item=>{
                         if(item.type==lei){
                             arr.push(item.id);
+                            if(this.ids.indexOf(item.id+"")>-1){
+                                leixings.push(item.id);
+                            }
                         }
                     })
-                    console.log(this.ids)
-                    arr.map(item=>{
-                        console.log(item)
-                        if(this.ids.indexOf(item+'')<0){
-                            a=false;
-                        }else{
-                            a=true;
-                        }
-                    })
-                    console.log(a)
-                    if(a){
+                    if(arr.length==leixings.length){
                         if(this.leis.indexOf(idx)<0){
                             this.leis.push(idx);
                         }
                     }else{
-                        this.leis.splice(idx,1);
+                        if(this.leis.indexOf(idx)>-1){
+                            this.leis.splice(this.leis.indexOf(idx),1);
+                        }
                     }
+                    
+                    
+                    // arr.map(item=>{
+                    //     if(this.ids.indexOf(item+'')<0){
+                    //         this.leis.splice(idx,1);
+                    //         return false;
+                    //     }else{
+                    //         if(this.leis.indexOf(idx)<0){
+                    //             this.leis.push(idx);
+                    //         }
+                    //         return false;
+                    //     }
+                    // })
+                    //console.log(a)
+                    // if(a){
+                    //     if(this.leis.indexOf(idx)<0){
+                    //         this.leis.push(idx);
+                    //     }
+                    // }else{
+                    //     this.leis.splice(this.leis.indexOf(idx),1);
+                    // }
                     this.xiaoji(idx,key);
                 }
                 else if(event.target.title=="xiao_no"){
@@ -359,6 +375,7 @@
                             }
                         }
                     })
+                    console.log(this.ids.length,this.data.length)
                     if(this.ids.length==this.data.length){
                         this.b=1;
                     }else{

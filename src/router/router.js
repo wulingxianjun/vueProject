@@ -23,6 +23,7 @@ import back_usersComponent from '../components/back_product/back_users.vue'
 
 const router = new VueRouter({
     routes: [
+        {path: '/', component: indexComponent, name: 'index'},
         {path: '/index', component: indexComponent, name: 'index'},
         {path: '/sort', component: sortComponent, name: 'sort'},
         {path: '/list', component: listComponent, name: 'list'},

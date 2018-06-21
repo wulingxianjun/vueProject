@@ -1,7 +1,7 @@
 import axios from 'axios'
 import router from '../router/router'
 
-const baseUrl = 'http://192.168.0.117:88/'
+const baseUrl = 'http://192.168.253.1:88/'
 
 // loading效果
 import $ from 'jquery'; 

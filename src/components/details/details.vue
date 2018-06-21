@@ -243,7 +243,7 @@
             this.myid = id;
             http.get('stores').then((res) => {
                 for(let i = 0;i < res.data.length;i++){
-                    if(i == id){
+                    if(i+1 == id){
                         this.mydata = res.data[i]
                     }
                 }
@@ -371,12 +371,14 @@
             // 立即购买跳转结算页面
             buy:function(){
                 this.$router.push({
-                    name:'pay',
-                    params:{
-                        s_id:this.mydata.id,
-                        qty:this.qty
-                    }
-                })
+                    name:'pay'
+                });
+                var arr=[];
+                var obj={};
+                obj.s_id=this.mydata.id;
+                obj.qty=this.qty;
+                arr.push(obj);
+                this.$store.dispatch("getcar",arr);
             },
             // 跳转购物车
             go_cart:function(){

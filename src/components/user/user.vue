@@ -99,26 +99,23 @@
                 }
             },
             t_login(){
-                http.post('verifytoken').then((res)=>{
-                    console.log(res);
-                    if(res.status){
+                var yonghu=localStorage.getItem("username");
+                if(yonghu){
 
-                    }else{
-                        this.$router.push({name:"login"})
-                    }
-                })
+                }else{
+                    this.$router.push({name:"login"})
+                }
             },
             zhe(){
                 $(".zhezhao").fadeOut(300);
                 $(".tanchuang").fadeOut(300);
             },
             tuichu(){
-                http.post('verifytoken').then((res)=>{
-                    if(res.status){
-                        $(".zhezhao").fadeIn(300);
-                        $(".tanchuang").fadeIn(300);
-                    }
-                })
+                var yonghu=localStorage.getItem("username");
+                if(yonghu){
+                    $(".zhezhao").fadeIn(300);
+                    $(".tanchuang").fadeIn(300);
+                }
                 
             },
             fanbuer(){
@@ -146,22 +143,20 @@
                     $('.scollHead').fadeOut('400');  
                 }  
             }); 
-            http.post('verifytoken').then((res)=>{
-                console.log(res);
-                if(res.status){
-                    console.log(res.data);
-                    this.username = res.data.username;
-                    http.post('select_users',{findname:this.username}).then((res)=>{
-                        if(res.status){
-                            this.userimg = res.data[0].img;
-                            console.log(this.userimg);
-                        }
-                    })
-                }else{
-                    this.userimg = "./src/userImg/chushi.png";
-                    this.username="注册/登录"
-                }
-            })
+            var yonghu=localStorage.getItem("username");
+            console.log(yonghu)
+            if(yonghu){
+                this.username = yonghu;
+                http.post('select_users',{findname:this.username}).then((res)=>{
+                    if(res.status){
+                        this.userimg = res.data[0].img;
+                        console.log(this.userimg);
+                    }
+                })
+            }else{
+                this.userimg = "./src/userImg/chushi.png";
+                this.username="注册/登录"
+            }
                
         },
         components:{

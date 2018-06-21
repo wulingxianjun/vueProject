@@ -2,7 +2,7 @@
     <div class="addressBox">
         <header class="chooseAddress">
             <ul>
-                <li><i class="fa fa-arrow-circle-left" @click="$router.push({path:'/pay'})"></i><span>选择收货地址</span></li>
+                <li><i class="fa fa-arrow-circle-left" @click="$router.go(-1)"></i><span>选择收货地址</span></li>
                 <li @click="management">管理</li>
             </ul>
         </header>

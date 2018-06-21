@@ -75,7 +75,7 @@ input{text-align: start;}
 
 #c_main .c_main2{
     position:absolute;
-    top:808px;
+    top:773px;
     z-index:1;
     width:100%;
     height: 115px; /*115px*/
@@ -95,7 +95,7 @@ input{text-align: start;}
     }
 #c_main .c_applink .app-item{width: 20%;
     height:100%;
-    padding: 2% 4.5%;
+    padding: 2% 0;
     }
 #c_main .c_applink .app-item img{
     margin:0 auto;

@@ -112,14 +112,15 @@
             http.post("select_users",{findname:username}).then(user=>{
                 this.address=JSON.parse(user.data[0].address);
             })
-            this.canshu=(this.$store.state.car.data)
+            this.canshu=this.$store.state.car.data;
+            console.log(this.canshu)
             if(this.canshu.length==1){
                 http.get("myshuju").then(res=>{
                     res.data.map(item=>{
                         if(this.canshu[0].s_id==item.id){
                             this.zongjia=item.sell*1*this.canshu[0].qty;
-                            this.this.canshu=item;
-                            this.this.canshu.qty=this.canshu[0].qty;
+                            this.obj=item;
+                            this.obj.qty=this.canshu[0].qty;
                         }
                     })
                 })
@@ -156,7 +157,8 @@
                 this.classObject2.qu_chuxian2=false;
             },
             lufan(){
-                this.$router.push({name:"car"});
+                // this.$router.push({name:"car"});
+                this.$router.go(-1)
             },
             zhifu(){
                 $(".zhezhao").fadeIn(300);

@@ -128,6 +128,7 @@
             })
 
             var _val=this.$route.query.val;
+            console.log(_val)
             if(_val){
                 http.post('mohu',{val:_val}).then(res=>{
                     this.data=res.data;
@@ -140,8 +141,8 @@
         },
         methods:{
             feigou(){
-                console.log($(event.target).parents("li"))
-                var id=$(event.target).parents("li")[0].title;
+                //console.log($(event.target).parents("li"))
+                var s_id=$(event.target).parents("li")[0].title;
                 if(event.target.tagName=="I"){
                     var yonghu=window.localStorage.getItem("username");
                     if(yonghu){
@@ -173,12 +174,12 @@
                                         var idx;
                                         var has = naduotiaoshuju.some(function(g,i){
                                             idx = i;
-                                            return g.s_id == id;
+                                            return g.s_id == s_id;
                                         });
                                         if(has){
                                             naduotiaoshuju[idx].qty=naduotiaoshuju[idx].qty*1+1;
                                         }else{
-                                            naduotiaoshuju.push({s_id:id,qty:1});
+                                            naduotiaoshuju.push({s_id:s_id,qty:1});
                                         }
                                         this.len=naduotiaoshuju.length;
                                         var arr=JSON.stringify(naduotiaoshuju)
@@ -195,7 +196,9 @@
                         $(".tanchuang").fadeIn(300);
                     }
                 }else{
-                    //this.$router.push({path:"/details/"+id});
+                    this.$router.push({name:"details",query:{
+                        id:s_id
+                    }});
                 }
             },
             t_qu(){
@@ -222,7 +225,7 @@
             },
             queding(){
                 $('body').css("overflow","auto");
-                this.k=0;
+                $(".zhezhao").fadeOut(300);
                 this.classObject3.tan_shai=false;
                 var qi=$(".qujian .qi").val();
                 var zhi=$(".qujian .zhi").val();
